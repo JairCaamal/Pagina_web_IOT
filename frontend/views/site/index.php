@@ -4,10 +4,72 @@ use \yii\bootstrap\Modal;
 use \yii\bootstrap\Alert;
 use yii\helpers\Html;
 
-/** @var yii\web\View $this */
-
-$this->title = 'Yii 2 Build';
+$this->title = 'Safe Drive';
 ?>
+
+<style>
+.hero-section{
+    background: linear-gradient(135deg, #0d6efd, #6610f2);
+    color: white;
+    border-radius: 20px;
+    padding: 80px 40px;
+    text-align: center;
+    margin-bottom: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.hero-section h1{
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+.hero-section p{
+    font-size: 1.2rem;
+    opacity: .9;
+}
+
+.feature-card{
+    border: none;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all .3s ease;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+    background: white;
+}
+
+.feature-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.15);
+}
+
+.feature-icon{
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.stats-section{
+    margin-top: 60px;
+    padding: 40px;
+    background: #f8f9fa;
+    border-radius: 20px;
+}
+
+.stat{
+    text-align: center;
+}
+
+.stat h2{
+    color: #0d6efd;
+    font-weight: bold;
+}
+
+body{
+    background-color: #f4f6f9;
+}
+</style>
+
 <div class="site-index">
 
     <!-- Hero Section con fondo degradado -->
