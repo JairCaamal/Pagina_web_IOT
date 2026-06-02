@@ -21,6 +21,10 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+    <p>
+        <strong>Total de usuarios:</strong> <?= $dataProvider->getTotalCount() ?>
+    </p>
+
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
