@@ -21,6 +21,10 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create User', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+    <p>
+        <strong>Total de usuarios:</strong> <?= $dataProvider->getTotalCount() ?>
+    </p>
+
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -34,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'auth_key',
             'password_hash',
             'password_reset_token',
-            //'email:email',
+            'email:email',
             //'rol_id',
             //'estado_id',
             //'tipo_usuario_id',
