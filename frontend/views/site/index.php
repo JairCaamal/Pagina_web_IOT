@@ -1,8 +1,6 @@
 <?php
 
 use \yii\bootstrap\Modal;
-use kartik\social\FacebookPlugin;
-use \yii\bootstrap\Collapse;
 use \yii\bootstrap\Alert;
 use yii\helpers\Html;
 
@@ -11,48 +9,91 @@ use yii\helpers\Html;
 $this->title = 'Yii 2 Build';
 ?>
 <div class="site-index">
-    <div class="p-5 mb-4 bg-transparent rounded-3">
+
+    <!-- Hero Section con fondo degradado -->
+    <div class="p-5 mb-4 rounded-3 text-white" style="background: linear-gradient(90deg, #007bff, #6610f2);">
         <div class="container-fluid py-5 text-center">
-            <h1 class="display-4">Congratulations!</h1>
-            <p class="fs-5 fw-light">You have successfully created your Yii-powered application.</p>
-            <p><a class="btn btn-lg btn-success" href="https://www.yiiframework.com">Get started with Yii</a></p>
+            <h1 class="display-4 fw-bold">Bienvenido a Yii 2 Build</h1>
+            <p class="fs-5 text-light">Tu aplicación está lista para crecer con estilo.</p>
+            <p>
+                <a class="btn btn-lg btn-primary" href="https://www.yiiframework.com">Explora Yii</a>
+                <?= Html::button('Contáctanos', [
+                    'class' => 'btn btn-outline-light ms-2',
+                    'data-toggle' => 'modal',
+                    'data-target' => '#contactModal'
+                ]) ?>
+            </p>
         </div>
     </div>
 
-    <div class="body-content">
+    <!-- Alerta dinámica -->
+    <div class="container">
+        <?= Alert::widget([
+            'options' => ['class' => 'alert-success'],
+            'body' => '¡Felicidades! Has configurado correctamente tu aplicación Yii2.'
+        ]) ?>
+    </div>
 
+    <!-- Sección de contenido con Cards -->
+    <div class="body-content">
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Documentación</h2>
+                        <p class="card-text text-muted">
+                            Encuentra guías oficiales, tutoriales y referencias para dominar Yii2.
+                        </p>
+                        <a class="btn btn-outline-dark" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Foro</h2>
+                        <p class="card-text text-muted">
+                            Conéctate con la comunidad, comparte dudas y aprende de otros desarrolladores.
+                        </p>
+                        <a class="btn btn-outline-dark" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-outline-secondary" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">Extensiones</h2>
+                        <p class="card-text text-muted">
+                            Descubre librerías y plugins que amplían las capacidades de tu aplicación.
+                        </p>
+                        <a class="btn btn-outline-dark" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
+
+    <!-- Modal de contacto -->
+    <?php
+    Modal::begin([
+        'id' => 'contactModal',
+        'header' => '<h4>Formulario de Contacto</h4>',
+    ]);
+    echo '<form>
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Correo</label>
+                <input type="email" class="form-control"/>
+            </div>
+            <div class="form-group">
+                <label>Mensaje</label>
+                <textarea class="form-control"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success mt-2">Enviar</button>
+          </form>';
+    Modal::end();
+    ?>
 </div>
