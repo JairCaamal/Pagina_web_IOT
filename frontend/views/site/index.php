@@ -1,7 +1,7 @@
 <?php
 
-use \yii\bootstrap\Modal;
-use \yii\bootstrap\Alert;
+use yii\bootstrap5\Modal;
+use yii\bootstrap5\Alert;
 use yii\helpers\Html;
 
 $this->title = 'Safe Drive';
@@ -137,6 +137,7 @@ body{
 
     <!-- Modal de contacto -->
     <?php
+    /*
     Modal::begin([
         'id' => 'contactModal',
         'header' => '<h4>Formulario de Contacto</h4>',
@@ -157,5 +158,6 @@ body{
             <button type="submit" class="btn btn-success mt-2">Enviar</button>
           </form>';
     Modal::end();
+    */
     ?>
 </div>
