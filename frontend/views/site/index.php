@@ -1,8 +1,6 @@
 <?php
 
-use yii\bootstrap5\Modal;
 use yii\bootstrap5\Alert;
-use yii\helpers\Html;
 
 $this->title = 'Safe Drive';
 ?>
@@ -72,92 +70,148 @@ body{
 
 <div class="site-index">
 
-    <!-- Hero Section con fondo degradado -->
-    <div class="p-5 mb-4 rounded-3 text-white" style="background: linear-gradient(90deg, #007bff, #6610f2);">
-        <div class="container-fluid py-5 text-center">
-            <h1 class="display-4 fw-bold">Bienvenido a Yii 2 Build</h1>
-            <p class="fs-5 text-light">Tu aplicación está lista para crecer con estilo.</p>
-            <p>
-                <a class="btn btn-lg btn-primary" href="https://www.yiiframework.com">Explora Yii</a>
-                <?= Html::button('Contáctanos', [
-                    'class' => 'btn btn-outline-light ms-2',
-                    'data-toggle' => 'modal',
-                    'data-target' => '#contactModal'
-                ]) ?>
-            </p>
+    <!-- HERO -->
+    <div class="hero-section">
+        <h1>🚗 Safe Drive</h1>
+
+        <p>
+            Plataforma inteligente de monitoreo vehicular basada en tecnología IoT.
+            Protegemos conductores y vehículos mediante sensores inteligentes,
+            alertas en tiempo real y monitoreo continuo.
+        </p>
+
+        <div class="mt-4">
+            <a href="#servicios" class="btn btn-light btn-lg me-2">
+                Conocer Más
+            </a>
+
+            <a href="/Pagina_web_IOT/backend/web" class="btn btn-outline-light btn-lg">
+                Acceso Administrativo
+            </a>
         </div>
     </div>
 
-    <!-- Alerta dinámica -->
-    <div class="container">
+    <!-- MENSAJE -->
+    <div class="container mb-4">
         <?= Alert::widget([
-            'options' => ['class' => 'alert-success'],
-            'body' => '¡Felicidades! Has configurado correctamente tu aplicación Yii2.'
+            'options' => ['class' => 'alert-primary'],
+            'body' => 'Safe Drive permite monitorear vehículos y conductores en tiempo real mediante sensores IoT, GPS y alertas inteligentes.'
         ]) ?>
     </div>
 
-    <!-- Sección de contenido con Cards -->
-    <div class="body-content">
+    <!-- SERVICIOS -->
+    <div class="container" id="servicios">
+
+        <h2 class="text-center mb-5">Nuestros Servicios</h2>
+
         <div class="row">
-            <div class="col-lg-4">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        <h2 class="card-title">Documentación</h2>
-                        <p class="card-text text-muted">
-                            Encuentra guías oficiales, tutoriales y referencias para dominar Yii2.
-                        </p>
-                        <a class="btn btn-outline-dark" href="https://www.yiiframework.com/doc/">Yii Documentation &raquo;</a>
-                    </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📡</div>
+                    <h4>Monitoreo en Tiempo Real</h4>
+
+                    <p>
+                        Supervisión continua de vehículos y conductores mediante sensores inteligentes.
+                    </p>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        <h2 class="card-title">Foro</h2>
-                        <p class="card-text text-muted">
-                            Conéctate con la comunidad, comparte dudas y aprende de otros desarrolladores.
-                        </p>
-                        <a class="btn btn-outline-dark" href="https://www.yiiframework.com/forum/">Yii Forum &raquo;</a>
-                    </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">⚠️</div>
+                    <h4>Alertas Inteligentes</h4>
+
+                    <p>
+                        Detección automática de eventos de riesgo para mejorar la seguridad vial.
+                    </p>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        <h2 class="card-title">Extensiones</h2>
-                        <p class="card-text text-muted">
-                            Descubre librerías y plugins que amplían las capacidades de tu aplicación.
-                        </p>
-                        <a class="btn btn-outline-dark" href="https://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a>
-                    </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h4>Geolocalización GPS</h4>
+
+                    <p>
+                        Seguimiento preciso de vehículos y rutas en tiempo real.
+                    </p>
                 </div>
             </div>
+
         </div>
+
     </div>
 
-    <!-- Modal de contacto -->
-    <?php
-    /*
-    Modal::begin([
-        'id' => 'contactModal',
-        'header' => '<h4>Formulario de Contacto</h4>',
-    ]);
-    echo '<form>
-            <div class="form-group">
-                <label>Nombre</label>
-                <input type="text" class="form-control"/>
+    <!-- BENEFICIOS -->
+    <div class="container stats-section">
+
+        <h2 class="text-center mb-5">¿Por qué elegir Safe Drive?</h2>
+
+        <div class="row">
+
+            <div class="col-md-3 stat">
+                <h2>24/7</h2>
+                <p>Monitoreo Permanente</p>
             </div>
-            <div class="form-group">
-                <label>Correo</label>
-                <input type="email" class="form-control"/>
+
+            <div class="col-md-3 stat">
+                <h2>100%</h2>
+                <p>Control de Eventos</p>
             </div>
-            <div class="form-group">
-                <label>Mensaje</label>
-                <textarea class="form-control"></textarea>
+
+            <div class="col-md-3 stat">
+                <h2>IoT</h2>
+                <p>Tecnología Inteligente</p>
             </div>
-            <button type="submit" class="btn btn-success mt-2">Enviar</button>
-          </form>';
-    Modal::end();
-    */
-    ?>
+
+            <div class="col-md-3 stat">
+                <h2>GPS</h2>
+                <p>Ubicación Precisa</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ACERCA DE -->
+    <div class="container mt-5">
+
+        <div class="card shadow border-0">
+            <div class="card-body p-5">
+
+                <h2>Acerca de Safe Drive</h2>
+
+                <p>
+                    Safe Drive es una plataforma desarrollada para mejorar la seguridad vial
+                    mediante el uso de dispositivos IoT capaces de recopilar información en tiempo real.
+                </p>
+
+                <p>
+                    Nuestro sistema permite monitorear conductores, detectar incidentes,
+                    generar alertas y brindar información útil para la toma de decisiones.
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="text-center mt-5 mb-4">
+
+        <hr>
+
+        <h5>Safe Drive</h5>
+
+        <p class="text-muted">
+            Plataforma de monitoreo vehicular basada en tecnología IoT.
+        </p>
+
+        <small class="text-muted">
+            © <?= date('Y') ?> Safe Drive | Todos los derechos reservados
+        </small>
+
+    </footer>
+
 </div>
